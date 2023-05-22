@@ -1,5 +1,5 @@
 # Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation
-This repo contains the official PyTorch implementation of  *Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation*
+This repo contains the official PyTorch implementation of  [*Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation*](https://pages.cs.huji.ac.il/adiyoss-lab/AudioToken/)
 
 # Abstract
 In recent years, image generation has shown a great leap in per-
