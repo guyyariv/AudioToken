@@ -85,12 +85,14 @@ accelerate launch inference.py \
 
 # Cite
 If you use our work in your research, please cite the following paper:
+```
 @article{yariv2023adaptation,
     title    =   {Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation},
     author   =   {Yariv, Guy and Gat, Itai and Lior, Wolf and Adi, Yossi and Schwartz, Idan},
     journal  =   {arXiv preprint arXiv:XXXXXX},
     year     =   {2023}
 }
+```
 
 # License
 This repository is released under the MIT license as found in the [LICENSE](LICENSE) file. 
