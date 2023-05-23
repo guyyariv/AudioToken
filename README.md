@@ -19,6 +19,9 @@ optimization. Results suggest the proposed method is superior
 to the evaluated baseline methods considering both objective
 and subjective metrics.
 
+<a href="https://arxiv.org/abs/2305.13050"><img src="https://img.shields.io/badge/arXiv-2301.13826-b31b1b.svg" height=22.5></a>
+<a href="https://github.cs.huji.ac.il/adiyoss-lab/AudioToken"><img src="https://img.shields.io/static/v1?label=Project&message=Website&color=red" height=20.5></a> 
+
 # News
 ### May 17, 2023
 Weights for [Lura](https://huggingface.co/blog/lora) were added. With only 3.3 MB of weights, the performance is pushed to higher level. The weights are stored in ```output/weights/lora_layers_learned_embeds.bin```.
