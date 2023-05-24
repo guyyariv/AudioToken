@@ -21,6 +21,7 @@ and subjective metrics.
 
 <a href="https://arxiv.org/abs/2305.13050"><img src="https://img.shields.io/badge/arXiv-2301.13826-b31b1b.svg" height=22.5></a>
 <a href="https://pages.cs.huji.ac.il/adiyoss-lab/AudioToken/"><img src="https://img.shields.io/static/v1?label=Project&message=Website&color=red" height=20.5></a> 
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/GuyYariv/AudioToken)
 
 # News
 ### May 17, 2023
