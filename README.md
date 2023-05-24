@@ -21,7 +21,7 @@ and subjective metrics.
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/GuyYariv/AudioToken)
 
 # News
-### May 17, 2023
+### May 22, 2023
 Weights for [Lura](https://huggingface.co/blog/lora) were added. The weights are stored in ```output/weights/lora_layers_learned_embeds.bin```.
 
 # Installation
