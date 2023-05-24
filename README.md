@@ -2,18 +2,15 @@
 This repo contains the official PyTorch implementation of  [*AudioToken: Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation*](https://pages.cs.huji.ac.il/adiyoss-lab/AudioToken/)
 
 # Abstract
-In recent years, image generation has shown a great leap in per-
-formance, where diffusion models play a central role. Although
-generating high-quality images, such models are mainly con-
-ditioned on textual descriptions. This begs the question: how
-can we adopt such models to be conditioned on other modal-
-ities?. In this paper, we propose a novel method utilizing la-
-tent diffusion models, trained for text-to-image-generation, to
+In recent years, image generation has shown a great leap in performance, where diffusion models play a central role. Although
+generating high-quality images, such models are mainly conditioned on textual descriptions. This begs the question: how
+can we adopt such models to be conditioned on other modalities?. In this paper, we propose a novel method utilizing
+latent diffusion models, trained for text-to-image-generation, to
 generate images, conditioned on audio recordings. Using a pre-
 trained audio encoding model, the proposed method encodes
 audio into a new token which can be considered as an adap-
 tation layer between the audio and text representations. Such a
-modeling paradigm requires a small number of trainable param-
+modeling paradigm requires a small number of trainable param
 eters making the proposed approach appealing for lightweight
 optimization. Results suggest the proposed method is superior
 to the evaluated baseline methods considering both objective
