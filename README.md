@@ -87,9 +87,10 @@ accelerate launch inference.py \
 # Cite
 If you use our work in your research, please cite the following paper:
 ```
-@inproceedings{Yariv2023AudioTokenAO,
+@article{yariv2023audiotoken,
   title={AudioToken: Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation},
-  author={Guy Yariv and Itai Gat and Lior Wolf and Yossi Adi and Idan Schwartz},
+  author={Yariv, Guy and Gat, Itai and Wolf, Lior and Adi, Yossi and Schwartz, Idan},
+  journal={arXiv preprint arXiv:2305.13050},
   year={2023}
 }
 ```
