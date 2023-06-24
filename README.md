@@ -36,7 +36,7 @@ accelerate config
 ```
 Download BEATs pre-trained model 
 ```
-mkdir -p models/BEATs/ && wget "https://msranlcmtteamdrive.blob.core.windows.net/share/BEATs/BEATs_iter3_plus_AS2M_finetuned_on_AS2M_cpt2.pt?sv=2020-08-04&st=2022-12-18T10%3A41%3A16Z&se=3022-12-19T10%3A41%3A00Z&sr=b&sp=r&sig=gSSExKP0otwVBgKwdV8FoMWL2VppARFq%2B26xKin5rKw%3D" -P "models/BEATs/"
+mkdir -p models/BEATs/ && wget "https://valle.blob.core.windows.net/share/BEATs/BEATs_iter3_plus_AS2M_finetuned_on_AS2M_cpt2.pt?sv=2020-08-04&st=2023-03-01T07%3A51%3A05Z&se=2033-03-02T07%3A51%3A00Z&sr=c&sp=rl&sig=QJXmSJG9DbMKf48UDIU1MfzIro8HQOf3sqlNXiflY1I%3D" -P "models/BEATs/"
 ```
 
 # Pre-Trained Embedder
