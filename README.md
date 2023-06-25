@@ -48,7 +48,7 @@ The embedder's weights, which we pre-trained and on which the article is based, 
 
 # Training
 
-First, download our data set. [VGGSound](https://www.robots.ox.ac.uk/~vgg/data/vggsound/)
+First, download our data set. [VGGSound](https://www.robots.ox.ac.uk/~vgg/data/vggsound/). Download links for the dataset can be found [here](https://huggingface.co/datasets/Loie/VGGSound/tree/main/).
 
 ```angular2html
 export MODEL_NAME="CompVis/stable-diffusion-v1-4"
