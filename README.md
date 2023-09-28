@@ -22,7 +22,7 @@ and subjective metrics.
 
 # News
 ### May 22, 2023
-Weights for [Lura](https://huggingface.co/blog/lora) were added. The weights are stored in ```output/weights/lora_layers_learned_embeds.bin```.
+Weights for [Lora](https://huggingface.co/blog/lora) were added. The weights are stored in ```output/weights/lora_layers_learned_embeds.bin```.
 
 # Installation
 ```
