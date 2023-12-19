@@ -35,7 +35,7 @@ imagenet_templates_small = [
 ]
 
 
-class AudioTokenVGGSound(Dataset):
+class VGGSound(Dataset):
     def __init__(
             self,
             args,
@@ -47,8 +47,8 @@ class AudioTokenVGGSound(Dataset):
         video_lst = "video/"
         audio_lst = "audio/"
 
-        self.video = args.train_data_dir + video_lst
-        self.audio = args.train_data_dir + audio_lst
+        self.video = args.data_dir + video_lst
+        self.audio = args.data_dir + audio_lst
         self.vggsound = "data/VGGSound/vggsound.csv"
         self.video_path = list()
         self.audio_path = list()
@@ -82,15 +82,11 @@ class AudioTokenVGGSound(Dataset):
                 self.df = self.df[~self.df['ytid'].isin(filtered_out)]
 
         if self.data_set == 'train' and self.filter_low_quality_imgs:
-            with open("constants/low_quality_videos.pkl.pkl", "rb") as file:
+            with open("constants/low_quality_videos.pkl", "rb") as file:
                 filtered_out = pickle.load(file)
                 self.df = self.df[~self.df['ytid'].isin(filtered_out)]
 
-        else:
-            for vid in list(samples):
-                self.video_path.append(os.path.join(self.video, vid + ".mp4"))
-                self.audio_path.append(os.path.join(self.audio, vid + ".wav"))
-
+        self.label = list()
         self.prepare_dataset(samples)
 
         self.num_samples = len(self.video_path)

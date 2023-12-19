@@ -20,10 +20,6 @@ and subjective metrics.
 <a href="https://pages.cs.huji.ac.il/adiyoss-lab/AudioToken/"><img src="https://img.shields.io/static/v1?label=Project&message=Website&color=red" height=20.5></a> 
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/GuyYariv/AudioToken)
 
-# News
-### May 22, 2023
-Weights for [Lora](https://huggingface.co/blog/lora) were added. The weights are stored in ```output/weights/lora_layers_learned_embeds.bin```.
-
 # Installation
 ```
 git clone git@github.com:guyyariv/AudioToken.git
@@ -57,15 +53,13 @@ export OUTPUT_DIR="output/"
 
 accelerate launch train.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
-  --train_data_dir=$DATA_DIR \
+  --data_dir=$DATA_DIR \
   --output_dir=$OUTPUT_DIR 
   --resolution=512 \
   --train_batch_size=4 \
   --gradient_accumulation_steps=4 \
   --max_train_steps=30000 \
-  --learning_rate=1.0e-05 --scale_lr \
-  --lr_scheduler="constant" \
-  --lr_warmup_steps=0 
+  --learning_rate=1.0e-05 \
 ```
 Note: Change the resolution to 768 if you are using the [stable-diffusion-2](https://huggingface.co/stabilityai/stable-diffusion-2) 768x768 model.
 # Inference

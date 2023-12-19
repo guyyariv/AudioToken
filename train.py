@@ -38,7 +38,7 @@ from huggingface_hub import HfFolder, whoami
 from tqdm.auto import tqdm
 from transformers import CLIPTokenizer
 from modules.AudioToken.AudioToken import AudioTokenWrapper
-from data.dataloader import AudioTokenVGGSound
+from data.dataloader import VGGSound
 
 # Will error if the minimal version of diffusers is not installed. Remove at your own risks.
 check_min_version("0.12.0")
@@ -61,7 +61,7 @@ def parse_args():
                         help="Revision of pretrained model identifier from huggingface.co/models.")
     parser.add_argument("--tokenizer_name", type=str, default=None,
                         help="Pretrained tokenizer name or path if not the same as model_name")
-    parser.add_argument("--train_data_dir", type=str,
+    parser.add_argument("--data_dir", type=str,
                         help="A folder containing the training data.")
     parser.add_argument("--placeholder_token", type=str, default="<*>",
                         help="A token to use as a placeholder for the concept.")
@@ -138,14 +138,14 @@ def parse_args():
                              " in advance as having poor visual quality.")
     parser.add_argument("--input_length", type=int, default=5,
                         help="Select the number of seconds of audio you want in each training-sample.")
-    parser.add_argument("--lora", type=bool, default=True,
+    parser.add_argument("--lora", type=bool, default=False,
                         help="Whether train Lora layers or not")
     args = parser.parse_args()
     env_local_rank = int(os.environ.get("LOCAL_RANK", -1))
     if env_local_rank != -1 and env_local_rank != args.local_rank:
         args.local_rank = env_local_rank
 
-    if args.train_data_dir is None:
+    if args.data_dir is None:
         raise ValueError("You must specify a train data directory.")
 
     return args
@@ -170,7 +170,7 @@ def train():
         gradient_accumulation_steps=args.gradient_accumulation_steps,
         mixed_precision=args.mixed_precision,
         log_with=args.report_to,
-        logging_dir=logging_dir,
+        project_dir=logging_dir,
         kwargs_handlers=[kwargs]
     )
 
@@ -227,7 +227,7 @@ def train():
                 args.learning_rate * args.gradient_accumulation_steps * args.train_batch_size * accelerator.num_processes
         )
 
-    train_dataset = AudioTokenVGGSound(
+    train_dataset = VGGSound(
         args=args,
         tokenizer=tokenizer,
         logger=logger,

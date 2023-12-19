@@ -16,7 +16,7 @@ from diffusers.utils import check_min_version
 # TODO: remove and import from diffusers.utils when the new version of diffusers is released
 from transformers import CLIPTokenizer
 
-from data.dataloader import AudioTokenVGGSound
+from data.dataloader import VGGSound
 from modules.AudioToken.AudioToken import AudioTokenWrapper
 
 # Will error if the minimal version of diffusers is not installed. Remove at your own risks.
@@ -36,7 +36,7 @@ def parse_args():
                         help="Revision of pretrained model identifier from huggingface.co/models.")
     parser.add_argument("--tokenizer_name", type=str, default=None,
                         help="Pretrained tokenizer name or path if not the same as model_name")
-    parser.add_argument("--train_data_dir", type=str,
+    parser.add_argument("--data_dir", type=str,
                         help="A folder containing the training data.")
     parser.add_argument("--placeholder_token", type=str, default="<*>",
                         help="A token to use as a placeholder for the audio.",)
@@ -73,7 +73,7 @@ def parse_args():
     parser.add_argument("--prompt", type=str, default='a photo of <*>, 4k, high resolution')
     parser.add_argument("--input_length", type=int, default=10,
                         help="Select the number of seconds of audio you want in each test-sample.")
-    parser.add_argument("--lora", type=bool, default=True,
+    parser.add_argument("--lora", type=bool, default=False,
                         help="Whether load Lora layers or not")
 
     args = parser.parse_args()
@@ -81,7 +81,7 @@ def parse_args():
     if env_local_rank != -1 and env_local_rank != args.local_rank:
         args.local_rank = env_local_rank
 
-    if args.train_data_dir is None:
+    if args.data_dir is None:
         raise ValueError("You must specify a train data directory.")
 
     return args
@@ -106,7 +106,7 @@ def inference(args):
     accelerator = Accelerator(
         mixed_precision=args.mixed_precision,
         log_with=args.report_to,
-        logging_dir=logging_dir,
+        project_dir=logging_dir,
     )
 
     # Make one log on every process with the configuration for debugging.
@@ -156,7 +156,7 @@ def inference(args):
     if args.allow_tf32:
         torch.backends.cuda.matmul.allow_tf32 = True
 
-    test_dataset = AudioTokenVGGSound(
+    test_dataset = VGGSound(
         args=args,
         tokenizer=tokenizer,
         logger=logger,

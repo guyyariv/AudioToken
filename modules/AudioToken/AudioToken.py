@@ -95,6 +95,6 @@ class AudioTokenWrapper(torch.nn.Module):
 
             if 'lora' in args and args.lora:
                 self.lora_layers.eval()
-                lora_layers_learned_embeds = args.lora_learned_embeds
+                lora_layers_learned_embeds = args.learned_embeds_lora
                 self.lora_layers.load_state_dict(torch.load(lora_layers_learned_embeds, map_location=accelerator.device))
                 self.unet.load_attn_procs(lora_layers_learned_embeds)
