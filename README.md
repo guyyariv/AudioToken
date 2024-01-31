@@ -74,7 +74,7 @@ export LEARNED_EMBEDS="output/embedder_learned_embeds.bin"
 
 accelerate launch inference.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
-  --test_data_dir=$DATA_DIR \
+  --data_dir=$DATA_DIR \
   --output_dir=$OUTPUT_DIR \ 
   --learned_embeds=$LEARNED_EMBEDS
 ```
