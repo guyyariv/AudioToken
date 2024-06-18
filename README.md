@@ -26,7 +26,7 @@ git clone git@github.com:guyyariv/AudioToken.git
 cd AudioToken
 pip install -r requirements.txt
 ```
-And config your Accelerate environment with:
+Configure your Accelerate environment with:
 ```angular2html
 accelerate config
 ```
