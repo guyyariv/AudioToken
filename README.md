@@ -1,4 +1,4 @@
-# AudioToken: Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation
+# [InterSpeech 2023] AudioToken: Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation
 This repo contains the official PyTorch implementation of  [*AudioToken: Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation*](https://pages.cs.huji.ac.il/adiyoss-lab/AudioToken/)
 
 # Abstract
